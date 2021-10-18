@@ -15,15 +15,49 @@
         tools:context=".MainActivity">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_input_your_name_here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Input your name here:"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/edt_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@={viewModel.name}"
+            tools:text="abc"
+            app:layout_constraintTop_toBottomOf="@id/tv_input_your_name_here"
+            app:layout_constraintBottom_toTopOf="@id/tv_your_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_your_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.yourName}"
+            tools:text="Your name is 1"
+            app:layout_constraintTop_toBottomOf="@id/edt_name"
+            app:layout_constraintBottom_toTopOf="@id/tv_value"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.text}"
             tools:text="Your value is 1"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_your_name"
+            app:layout_constraintBottom_toTopOf="@id/btn_minus"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintRight_toRightOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_minus"
@@ -31,8 +65,9 @@
             android:layout_height="wrap_content"
             android:text="-"
             android:onClick="@{()->viewModel.minus()}"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@id/tv_value"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_plus" />
 
@@ -42,8 +77,8 @@
             android:layout_height="wrap_content"
             android:text="+"
             android:onClick="@{()->viewModel.plus()}"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_value"
+            app:layout_constraintTop_toTopOf="@id/btn_minus"
+            app:layout_constraintBottom_toBottomOf="@id/btn_minus"
             app:layout_constraintStart_toEndOf="@id/btn_minus"
             app:layout_constraintEnd_toEndOf="parent" />
 
