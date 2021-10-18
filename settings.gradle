@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidSemina"
 include ':S1_findViewById'
+include ':s2_databinding'

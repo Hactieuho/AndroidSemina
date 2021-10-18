@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/S1_findViewById" />
+            <option value="$PROJECT_DIR$/s2_databinding" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
