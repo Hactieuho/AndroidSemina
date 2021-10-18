@@ -1,4 +1,4 @@
-package com.hth96.androidsemina
+package com.hth96.s3_twowaysbinding
 
 import org.junit.Test
 

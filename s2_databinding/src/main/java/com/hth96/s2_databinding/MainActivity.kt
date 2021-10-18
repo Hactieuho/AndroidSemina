@@ -1,7 +1,7 @@
 package com.hth96.s2_databinding
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.hth96.s2_databinding.databinding.ActivityMainBinding
 

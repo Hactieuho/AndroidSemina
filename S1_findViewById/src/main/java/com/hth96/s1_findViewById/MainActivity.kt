@@ -1,4 +1,4 @@
-package com.hth96.androidsemina
+package com.hth96.s1_findViewById
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
