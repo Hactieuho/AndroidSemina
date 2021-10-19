@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.hth96.s4_bindingadapter.MainViewModel" />
+            type="com.hth96.s4_bindingadapter.main.MainViewModel" />
     </data>
 
     <ScrollView
@@ -16,7 +16,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".MainActivity">
+            tools:context=".main.MainActivity">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_input_your_name_here"

@@ -1,9 +1,10 @@
-package com.hth96.s4_bindingadapter
+package com.hth96.s4_bindingadapter.main
 
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.hth96.s4_bindingadapter.R
 
 class MainViewModel : ViewModel() {
 
