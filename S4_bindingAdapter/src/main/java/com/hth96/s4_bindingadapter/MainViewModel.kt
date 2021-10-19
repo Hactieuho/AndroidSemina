@@ -1,26 +1,27 @@
 package com.hth96.s4_bindingadapter
 
+import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
 
-    val name = MutableLiveData("")
-    val yourName = Transformations.map(name) {
-        "Your name is $it"
+    val firstName = MutableLiveData("")
+    val lastNameVisibility = Transformations.map(firstName) {
+        if (it.isNullOrBlank()) View.GONE else View.VISIBLE
+    }
+    val lastName = MutableLiveData("")
+    val fullName = Transformations.switchMap(firstName) { first ->
+        Transformations.map(lastName) { last ->
+            "Your full name is: ${first.trim()} ${last.trim()}"
+        }
+    }
+    val fullNameVisibility = Transformations.switchMap(firstName) { first ->
+        Transformations.map(lastName) { last ->
+            if (first.isNullOrBlank() || last.isNullOrBlank()) View.GONE else View.VISIBLE
+        }
     }
 
-    private val value = MutableLiveData(10)
-    val text = Transformations.map(value) {
-        "Your value is $it"
-    }
-
-    fun minus() {
-        value.postValue(value.value as Int - 1)
-    }
-
-    fun plus() {
-        value.postValue(value.value as Int + 1)
-    }
+    val favouriteColorCheckedButtonId = MutableLiveData(R.id.rb_green)
 }
