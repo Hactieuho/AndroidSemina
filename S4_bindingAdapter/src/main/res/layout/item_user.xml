@@ -30,30 +30,31 @@
                 android:id="@+id/tv_full_name"
                 android:layout_width="@dimen/base_0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/base_8dp"
+                android:layout_marginHorizontal="@dimen/base_8dp"
                 android:text="@{viewModel.fullName()}"
                 tools:text="Hactieuho96"
                 app:layout_constraintVertical_chainStyle="packed"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/tv_email"
                 app:layout_constraintStart_toEndOf="@id/iv_user_avatar"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toStartOf="@id/iv_delete"/>
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_email"
                 android:layout_width="@dimen/base_0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/base_4dp"
-                android:layout_marginStart="@dimen/base_8dp"
+                android:layout_marginHorizontal="@dimen/base_8dp"
                 android:text="@{viewModel.email}"
                 tools:text="Hactieuho96@gmail.com"
                 app:layout_constraintTop_toBottomOf="@id/tv_full_name"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_user_avatar"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toStartOf="@id/iv_delete"/>
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_delete"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@color/black"
+                android:src="@drawable/ic_close"
                 android:layout_marginEnd="@dimen/base_8dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
