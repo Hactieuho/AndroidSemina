@@ -1,4 +1,4 @@
-package com.hth96.s4_bindingadapter.main
+package com.hth96.s4_bindingadapter.ui.main
 
 import android.view.View
 import androidx.lifecycle.MutableLiveData

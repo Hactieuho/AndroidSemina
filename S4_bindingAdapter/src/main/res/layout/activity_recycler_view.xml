@@ -6,15 +6,23 @@
     <data>
         <variable
             name="viewModel"
-            type="com.hth96.s4_bindingadapter.recyclerview.RecyclerViewViewModel" />
+            type="com.hth96.s4_bindingadapter.ui.recyclerview.RecyclerViewViewModel" />
+        <variable
+            name="adapter"
+            type="com.hth96.s4_bindingadapter.adapter.user.UserAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".recyclerview.RecyclerViewActivity">
+        tools:context=".ui.recyclerview.RecyclerViewActivity">
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_user"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            app:userAdapter="@{adapter}"
+            app:userList="@{viewModel.userList}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.hth96.s4_bindingadapter.main.MainViewModel" />
+            type="com.hth96.s4_bindingadapter.ui.main.MainViewModel" />
     </data>
 
     <ScrollView
@@ -16,7 +16,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".main.MainActivity">
+            tools:context=".ui.main.MainActivity">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_input_your_name_here"
@@ -128,6 +128,7 @@
                 app:layout_constraintEnd_toEndOf="parent"/>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_recycler_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Recycler View"
@@ -136,7 +137,6 @@
                 app:layout_constraintTop_toBottomOf="@id/rg_favourite_colors"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
