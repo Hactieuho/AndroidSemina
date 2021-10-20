@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidSemina">
         <activity
+            android:name=".recyclerview.RecyclerViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
