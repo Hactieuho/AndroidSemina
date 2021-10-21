@@ -18,7 +18,7 @@ interface UserService {
     companion object {
         private const val BASE_URL = "https://reqres.in/api/"
 
-        private fun provideRubbishService() : UserService {
+        private fun provideUserService() : UserService {
             val moshi = Moshi.Builder()
                 .add(KotlinJsonAdapterFactory())
                 .build()
@@ -35,6 +35,6 @@ interface UserService {
             return retrofit.create(UserService::class.java)
         }
 
-        val api = provideRubbishService()
+        val api = provideUserService()
     }
 }
