@@ -10,7 +10,8 @@ import com.hth96.s4_bindingadapter.databinding.ItemUserBinding
 import com.hth96.s4_bindingadapter.model.User
 
 class UserAdapter(
-    private val activity: AppCompatActivity
+    private val activity: AppCompatActivity,
+    var onDelete : (User) -> Unit
 ) : ListAdapter<User, DataBindingViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataBindingViewHolder {
@@ -21,8 +22,10 @@ class UserAdapter(
 
     override fun onBindViewHolder(holder: DataBindingViewHolder, position: Int) {
         val binding = holder.binding as ItemUserBinding
-        binding.viewModel = getItem(position)
+        val data = getItem(position)
+        binding.viewModel = data
         binding.lifecycleOwner = activity
+        binding.ivDelete.setOnClickListener { onDelete(data) }
     }
 }
 
