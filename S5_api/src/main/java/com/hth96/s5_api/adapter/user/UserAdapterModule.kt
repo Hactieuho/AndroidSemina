@@ -1,4 +1,4 @@
-package com.hth96.s4_bindingadapter.adapter.user
+package com.hth96.s5_api.adapter.user
 
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
-import com.hth96.s4_bindingadapter.model.User
+import com.hth96.s5_api.model.User
 
 @BindingAdapter("app:userAvatar")
 fun AppCompatImageView.userAvatar(url: String?) {
