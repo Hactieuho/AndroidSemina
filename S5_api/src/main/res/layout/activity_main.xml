@@ -16,14 +16,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.recyclerview.RecyclerViewActivity">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_search"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/grey"
+            android:paddingHorizontal="@dimen/base_16dp"
+            android:text="@={viewModel.searchText}"
+            app:layout_constraintTop_toTopOf="parent"/>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             tools:listitem="@layout/item_user"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"
             app:userAdapter="@{adapter}"
-            app:userList="@{viewModel.userList}"/>
+            app:userList="@{viewModel.userList}"
+            app:layout_constraintTop_toBottomOf="@id/edt_search"
+            app:layout_constraintBottom_toBottomOf="parent"/>
         <ProgressBar
             android:layout_width="40dp"
             android:layout_height="40dp"

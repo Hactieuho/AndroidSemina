@@ -1,6 +1,7 @@
 package com.hth96.s5_api.ui
 
 import android.view.View
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,8 +12,12 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
     private val userRepository = UserRepository.instant
 
-    val userList = Transformations.map(userRepository.getUsersResult) {
-        it.data
+    val searchText = MutableLiveData("")
+
+    val userList = Transformations.switchMap(searchText) { search ->
+        Transformations.map(userRepository.getUsersResult) { list ->
+            list.data?.filter { it?.fullName()?.contains(search, true) == true }
+        }
     }
 
     val progressBarVisibility = Transformations.map(userRepository.getUsersResult) {
