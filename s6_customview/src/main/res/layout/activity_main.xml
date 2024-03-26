@@ -28,5 +28,29 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/textView"
             android:layout_centerInParent="true" />
+
+        <com.hth96.s6_customview.EmotionalFaceView
+            android:id="@+id/happyButton"
+            android:layout_width="@dimen/face_button_dimen"
+            android:layout_height="@dimen/face_button_dimen"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            app:borderColor="@color/white"
+            app:eyesColor="@color/white"
+            app:faceColor="@color/red"
+            app:mouthColor="@color/white"
+            app:state="happy" />
+
+        <com.hth96.s6_customview.EmotionalFaceView
+            android:id="@+id/sadButton"
+            android:layout_width="@dimen/face_button_dimen"
+            android:layout_height="@dimen/face_button_dimen"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            app:borderColor="@color/black"
+            app:eyesColor="@color/black"
+            app:faceColor="@color/light_grey"
+            app:mouthColor="@color/black"
+            app:state="sad" />
     </RelativeLayout>
 </layout>
