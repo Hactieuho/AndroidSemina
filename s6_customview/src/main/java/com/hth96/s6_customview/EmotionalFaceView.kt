@@ -73,14 +73,20 @@ class EmotionalFaceView(context: Context, attrs: AttributeSet) : View(context, a
 
     private fun drawMouth(canvas: Canvas) {
 // 1
-        mouthPath.moveTo(size * 0.22f, size * 0.7f)
+        mouthPath.moveTo(size * 0.22f, size * 0.70f)
 // 2
         mouthPath.quadTo(size * 0.50f, size * 0.80f, size * 0.78f, size * 0.70f)
 // 3
-        mouthPath.quadTo(size * 0.50f, size * 0.90f, size * 0.22f, size * 0.70f)
+        mouthPath.quadTo(size * 0.50f, size * 1.00f, size * 0.22f, size * 0.70f)
 // 4
+//        paint.color = mouthColor
+//        paint.style = Paint.Style.FILL
+
         paint.color = mouthColor
-        paint.style = Paint.Style.FILL
+        paint.style = Paint.Style.STROKE
+        paint.strokeCap = Paint.Cap.ROUND
+        paint.strokeJoin = Paint.Join.ROUND
+        paint.strokeWidth = 10.0f
 // 5
         canvas.drawPath(mouthPath, paint)
 
