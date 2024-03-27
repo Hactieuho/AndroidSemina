@@ -6,6 +6,8 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.RectF
+import android.os.Bundle
+import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.View
 
@@ -116,12 +118,20 @@ class EmotionalFaceView(context: Context, attrs: AttributeSet) : View(context, a
     }
 
     private fun drawMouth(canvas: Canvas) {
-// 1
-        mouthPath.moveTo(size * 0.22f, size * 0.70f)
-// 2
-        mouthPath.quadTo(size * 0.50f, size * 0.80f, size * 0.78f, size * 0.70f)
-// 3
-        mouthPath.quadTo(size * 0.50f, size * 1.00f, size * 0.22f, size * 0.70f)
+        mouthPath.reset()
+
+
+        if (happinessState == HAPPY) {
+            // Happy mouth path
+            mouthPath.moveTo(size * 0.22f, size * 0.7f)
+            mouthPath.quadTo(size * 0.5f, size * 0.80f, size * 0.78f, size * 0.7f)
+            mouthPath.quadTo(size * 0.5f, size * 1.00f, size * 0.22f, size * 0.7f)
+        } else {
+            // Sad mouth path
+            mouthPath.moveTo(size * 0.22f, size * 0.8f)
+            mouthPath.quadTo(size * 0.5f, size * 0.50f, size * 0.78f, size * 0.8f)
+            mouthPath.quadTo(size * 0.5f, size * 0.70f, size * 0.22f, size * 0.8f)
+        }
 // 4
 //        paint.color = mouthColor
 //        paint.style = Paint.Style.FILL
@@ -145,4 +155,25 @@ class EmotionalFaceView(context: Context, attrs: AttributeSet) : View(context, a
 
     }
 
+    override fun onSaveInstanceState(): Parcelable {
+        // 1
+        val bundle = Bundle()
+        // 2
+        bundle.putLong("happinessState", happinessState)
+        // 3
+        bundle.putParcelable("superState", super.onSaveInstanceState())
+        return bundle
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable?) {
+        // 4
+        var viewState = state
+        if (viewState is Bundle) {
+            // 5
+            happinessState = viewState.getLong("happinessState", HAPPY)
+            // 6
+            viewState = viewState.getParcelable("superState")
+        }
+        super.onRestoreInstanceState(viewState)
+    }
 }

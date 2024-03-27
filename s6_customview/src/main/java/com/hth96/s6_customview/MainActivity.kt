@@ -15,5 +15,33 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+
+        setOnClickListener()
+    }
+
+    private fun setOnClickListener() {
+        binding.happyButton.setOnClickListener {
+            if (binding.happyButton.happinessState == EmotionalFaceView.HAPPY) {
+                binding.happyButton.happinessState = EmotionalFaceView.SAD
+            } else {
+                binding.happyButton.happinessState = EmotionalFaceView.HAPPY
+            }
+        }
+
+        binding.sadButton.setOnClickListener {
+            if (binding.sadButton.happinessState == EmotionalFaceView.HAPPY) {
+                binding.sadButton.happinessState = EmotionalFaceView.SAD
+            } else {
+                binding.sadButton.happinessState = EmotionalFaceView.HAPPY
+            }
+        }
+
+        binding.emotionalFaceView.setOnClickListener {
+            if (binding.emotionalFaceView.happinessState == EmotionalFaceView.HAPPY) {
+                binding.emotionalFaceView.happinessState = EmotionalFaceView.SAD
+            } else {
+                binding.emotionalFaceView.happinessState = EmotionalFaceView.HAPPY
+            }
+        }
     }
 }
