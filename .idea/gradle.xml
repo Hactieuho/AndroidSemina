@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/S4_bindingadapter" />
             <option value="$PROJECT_DIR$/S5_api" />
             <option value="$PROJECT_DIR$/S6_customview" />
+            <option value="$PROJECT_DIR$/S7_animation" />
           </set>
         </option>
       </GradleProjectSettings>
