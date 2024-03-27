@@ -1,10 +1,13 @@
 package com.hth96.s7_animation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.hth96.s7_animation.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -20,6 +23,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setOnClickListener() {
+        binding.BTNblink.setOnClickListener {
+            startAnimation(R.anim.blink)
+        }
+        binding.BTNfade.setOnClickListener {
+            startAnimation(R.anim.fade)
+        }
+        binding.BTNmove.setOnClickListener {
+            startAnimation(R.anim.move)
+        }
+        binding.BTNrotate.setOnClickListener {
+            startAnimation(R.anim.rotate)
+        }
+        binding.BTNslide.setOnClickListener {
+            startAnimation(R.anim.slide)
+        }
+        binding.BTNzoom.setOnClickListener {
+            startAnimation(R.anim.zoom)
+        }
+        binding.BTNstop.setOnClickListener {
+            binding.imageview.clearAnimation()
+        }
+    }
 
+    private fun startAnimation(animationId: Int) {
+        val animation = AnimationUtils.loadAnimation(applicationContext, animationId)
+        binding.imageview.startAnimation(animation)
     }
 }
