@@ -31,17 +31,26 @@
                     android:layout_height="wrap_content"
                     android:text="@{viewModel.textStr}"
                     tools:text="onCreate"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </ScrollView>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_start_other_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start other activity"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_clear"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Clear"
             android:layout_margin="16dp"
             android:onClick="@{()->viewModel.clearTexts()}"
-            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.hth96.s8_activityLifecycle
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -17,6 +18,19 @@ class MainActivity : AppCompatActivity() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
         viewModel.addText("1. onCreate")
+
+        setOnClickListener()
+    }
+
+    private fun setOnClickListener() {
+        binding.btnStartOtherActivity.setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    OtherActivity::class.java
+                )
+            )
+        }
     }
 
     override fun onStart() {
@@ -66,6 +80,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        viewModel.addText("onDestroy")
+        viewModel.addText("8. onDestroy")
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        viewModel.addText("onAttachedToWindow")
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        viewModel.addText("onDetachedFromWindow")
     }
 }
