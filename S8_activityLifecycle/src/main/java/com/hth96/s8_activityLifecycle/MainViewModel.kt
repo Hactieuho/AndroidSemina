@@ -14,4 +14,8 @@ class MainViewModel : ViewModel() {
         textList.value?.add(text)
         textList.postValue(textList.value)
     }
+
+    fun clearTexts() {
+        textList.postValue(ArrayList())
+    }
 }
