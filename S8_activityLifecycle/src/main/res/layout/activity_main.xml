@@ -30,7 +30,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{viewModel.textStr}"
-                    tools:text="onCreate" />
+                    tools:text="onCreate"
+                    android:textSize="20sp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </ScrollView>
 
@@ -40,6 +41,7 @@
             android:text="Clear"
             android:layout_margin="16dp"
             android:onClick="@{()->viewModel.clearTexts()}"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

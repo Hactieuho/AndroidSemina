@@ -16,26 +16,56 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-        viewModel.addText("onCreate")
-    }
-
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
-        viewModel.addText("onPostCreate")
+        viewModel.addText("1. onCreate")
     }
 
     override fun onStart() {
         super.onStart()
-        viewModel.addText("onStart")
+        viewModel.addText("2. onStart")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        viewModel.addText("2.1. onRestoreInstanceState")
+    }
+
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+        viewModel.addText("3. onPostCreate")
     }
 
     override fun onResume() {
         super.onResume()
-        viewModel.addText("onResume")
+        viewModel.addText("4. onResume")
     }
 
     override fun onPostResume() {
         super.onPostResume()
-        viewModel.addText("onPostResume")
+        viewModel.addText("5. onPostResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.addText("6. onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        viewModel.addText("7. onStop")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        viewModel.addText("7.1. onSaveInstanceState")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        viewModel.addText("7.2. onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.addText("onDestroy")
     }
 }
