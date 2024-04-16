@@ -1,6 +1,5 @@
 package com.hth96.s8_activityLifecycle
 
-import android.content.ComponentCallbacks
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.addText("1. onCreate")
 
         setOnClickListener()
+        observeLiveData()
     }
 
     private fun setOnClickListener() {
@@ -31,6 +31,19 @@ class MainActivity : AppCompatActivity() {
                     OtherActivity::class.java
                 )
             )
+        }
+
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+    }
+
+    private fun observeLiveData() {
+        Repository.getInstance().triggerFinishMainActivity.observe(this) {
+            if (it == true) {
+                Repository.getInstance().triggerFinishMainActivity.value = null
+                finish()
+            }
         }
     }
 
