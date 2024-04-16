@@ -1,13 +1,11 @@
 package com.hth96.s7_animation
 
 import android.os.Bundle
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.hth96.s7_animation.databinding.ActivityMainBinding
-
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
