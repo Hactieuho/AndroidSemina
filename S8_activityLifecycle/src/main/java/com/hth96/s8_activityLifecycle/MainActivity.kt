@@ -1,5 +1,6 @@
 package com.hth96.s8_activityLifecycle
 
+import android.content.ComponentCallbacks
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -55,41 +56,41 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPostResume() {
         super.onPostResume()
-        viewModel.addText("5. onPostResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        viewModel.addText("6. onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        viewModel.addText("7. onStop")
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        viewModel.addText("7.1. onSaveInstanceState")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        viewModel.addText("7.2. onRestart")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        viewModel.addText("8. onDestroy")
+        viewModel.addText("4.1 onPostResume")
     }
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-        viewModel.addText("onAttachedToWindow")
+        viewModel.addText("4.2. onAttachedToWindow")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.addText("5. onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        viewModel.addText("6. onStop")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        viewModel.addText("6.1. onSaveInstanceState")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        viewModel.addText("6.2. onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.addText("7. onDestroy")
     }
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
-        viewModel.addText("onDetachedFromWindow")
+        viewModel.addText("7.1. onDetachedFromWindow")
     }
 }
