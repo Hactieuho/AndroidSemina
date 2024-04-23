@@ -15,3 +15,5 @@ include ':S5_api'
 include ':S6_customview'
 include ':S7_animation'
 include ':S8_activityLifecycle'
+include ':S9_fragmentLifecycle'
+

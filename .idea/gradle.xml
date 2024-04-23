@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/S6_customview" />
             <option value="$PROJECT_DIR$/S7_animation" />
             <option value="$PROJECT_DIR$/S8_activityLifecycle" />
+            <option value="$PROJECT_DIR$/S9_fragmentLifecycle" />
           </set>
         </option>
       </GradleProjectSettings>
