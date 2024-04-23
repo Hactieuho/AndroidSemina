@@ -18,21 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_finish_fragment1"
+            android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Finish Fragment 1"
+            android:text="Back"
             android:layout_margin="16dp"
-            android:onClick="@{}"
-            app:layout_constraintBottom_toTopOf="@id/btn_finish_fragment2"
-            app:layout_constraintEnd_toEndOf="parent" />
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_finish_fragment2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Finish Fragment 2"
-            android:layout_margin="16dp"
-            android:onClick="@{}"
             app:layout_constraintBottom_toTopOf="@id/btn_start_fragment1"
             app:layout_constraintEnd_toEndOf="parent" />
         <androidx.appcompat.widget.AppCompatButton
@@ -41,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="Start Fragment 1"
             android:layout_margin="16dp"
-            android:onClick="@{}"
+            android:onClick="@{()->viewModel.clearTexts()}"
             app:layout_constraintBottom_toTopOf="@id/btn_start_fragment2"
             app:layout_constraintEnd_toEndOf="parent" />
         <androidx.appcompat.widget.AppCompatButton
@@ -51,6 +41,15 @@
             android:text="Start Fragment 2"
             android:layout_margin="16dp"
             android:onClick="@{}"
+            app:layout_constraintBottom_toTopOf="@id/btn_clear"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear"
+            android:layout_margin="16dp"
+            android:onClick="@{()->viewModel.clearTexts()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

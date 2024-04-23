@@ -18,28 +18,23 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         setOnClickListener()
-        observeLiveData()
     }
 
     private fun setOnClickListener() {
         binding.btnStartFragment1.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.fragmentContainerView, Fragment1.newInstance())
-                .commit()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainerView, Fragment1.newInstance())
+            transaction.addToBackStack("fragment1")
+            transaction.commit()
         }
         binding.btnStartFragment2.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.fragmentContainerView, Fragment2.newInstance())
-                .commit()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainerView, Fragment2.newInstance())
+            transaction.addToBackStack("fragment2")
+            transaction.commit()
         }
-    }
-
-    private fun observeLiveData() {
-        Repository.getInstance().triggerFinishMainActivity.observe(this) {
-            if (it == true) {
-                Repository.getInstance().triggerFinishMainActivity.value = null
-                finish()
-            }
+        binding.btnBack.setOnClickListener {
+            supportFragmentManager.popBackStackImmediate()
         }
     }
 }
