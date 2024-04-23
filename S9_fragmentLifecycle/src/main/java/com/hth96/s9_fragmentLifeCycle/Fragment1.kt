@@ -10,11 +10,18 @@ import com.hth96.s9_fragmentLifeCycle.databinding.Fragment1Binding
 
 class Fragment1 : Fragment() {
     lateinit var binding: Fragment1Binding
-    private val viewModel: MainViewModel = (activity as MainActivity).viewModel
+    private val viewModel by lazy { (activity as MainActivity).viewModel }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.addText("1. onCreate, ${lifecycle.currentState}")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        viewModel.addText("2. onCreateView, ${lifecycle.currentState}")
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment1, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
