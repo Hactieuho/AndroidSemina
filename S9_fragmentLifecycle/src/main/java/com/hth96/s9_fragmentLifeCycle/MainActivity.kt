@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-        viewModel.addText("1. onCreate, ${lifecycle.currentState}")
+        viewModel.addText("A1. onCreate, ${lifecycle.currentState}")
 
         setOnClickListener()
     }
