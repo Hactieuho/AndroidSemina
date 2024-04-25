@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.hth96.s9_fragmentLifeCycle.R
-import com.hth96.s9_fragmentLifeCycle.databinding.Fragment2Binding
+import com.hth96.s10_navigation.R
+import com.hth96.s10_navigation.databinding.Fragment2Binding
 
 class Fragment2 : Fragment() {
     lateinit var binding: Fragment2Binding
