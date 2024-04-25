@@ -16,4 +16,5 @@ include ':S6_customview'
 include ':S7_animation'
 include ':S8_activityLifecycle'
 include ':S9_fragmentLifecycle'
+include ':S10_navigation'
 
