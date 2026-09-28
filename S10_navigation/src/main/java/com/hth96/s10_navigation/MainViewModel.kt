@@ -1,13 +1,12 @@
 package com.hth96.s10_navigation
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.map
 
 class MainViewModel : ViewModel() {
     private val textList = Repository.getInstance().textList
 
-    val textStr = Transformations.map(textList) {
+    val textStr = textList.map {
         it.joinToString(separator = "\n")
     }
 
